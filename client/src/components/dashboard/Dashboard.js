@@ -47,9 +47,29 @@ const Dashboard = ({
               ) : (
                 <h5 style={{ color: "#738f93" }}>No Appointments yet..</h5>
               )}
-              <Review patient={profile.patients} review={profile.review} />
-              <Experience experience={profile.experience} />
-              <Education education={profile.education} />
+
+              {profile.review !== null && profile.review.length > 0 ? (
+                <Review patient={profile.patients} review={profile.review} />
+              ) : (
+                <h5 style={{ color: "#738f93" }}>No Reviews yet..</h5>
+              )}
+
+              {profile.experience !== null && profile.experience.length > 0 ? (
+                <Experience experience={profile.experience} />
+              ) : (
+                <h5 style={{ color: "#738f93" }}>
+                  No Experience information yet..
+                </h5>
+              )}
+
+              {profile.education !== null && profile.education.length > 0 ? (
+                <Education education={profile.education} />
+              ) : (
+                <h5 style={{ color: "#738f93" }}>
+                  No Education information yet..
+                </h5>
+              )}
+
               <button
                 onClick={() => deleteAccount()}
                 type="button"
