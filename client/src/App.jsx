@@ -63,62 +63,21 @@ const App = () => {
                 <Route path="/registerUser" element={<UserRegister />} />
                 <Route path="/profiles" element={<Profiles />} />
                 <Route path="/doctor/:id" element={<Profile />} />
-                <Route
-                  path="/dashboard"
-                  element={
-                    <PrivateDoctorRoute>
-                      <Dashboard />
-                    </PrivateDoctorRoute>
-                  }
-                />
-                <Route
-                  path="/add-education"
-                  element={
-                    <PrivateDoctorRoute>
-                      <AddEducation />
-                    </PrivateDoctorRoute>
-                  }
-                />
-                <Route
-                  path="/add-experience"
-                  element={
-                    <PrivateDoctorRoute>
-                      <AddExperience />
-                    </PrivateDoctorRoute>
-                  }
-                />
-                <Route
-                  path="/create-profile"
-                  element={
-                    <PrivateDoctorRoute>
-                      <CreateProfile />
-                    </PrivateDoctorRoute>
-                  }
-                />
-                <Route
-                  path="/edit-profile"
-                  element={
-                    <PrivateDoctorRoute>
-                      <EditProfile />
-                    </PrivateDoctorRoute>
-                  }
-                />
-                <Route
-                  path="/appointment"
-                  element={
-                    <PrivateUserRoute>
-                      <Appointment />
-                    </PrivateUserRoute>
-                  }
-                />
-                <Route
-                  path="/appointment/:id"
-                  element={
-                    <PrivateUserRoute>
-                      <AppointmentForm />
-                    </PrivateUserRoute>
-                  }
-                />
+                <Route element={<PrivateDoctorRoute />}>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/add-education" element={<AddEducation />} />
+                  <Route path="/add-experience" element={<AddExperience />} />
+                  <Route path="/create-profile" element={<CreateProfile />} />
+                  <Route path="/edit-profile" element={<EditProfile />} />
+                </Route>
+
+                <Route element={<PrivateUserRoute />}>
+                  <Route path="/appointment" element={<Appointment />} />
+                  <Route
+                    path="/appointment/:id"
+                    element={<AppointmentForm />}
+                  />
+                </Route>
               </Routes>
             </div>
             <Footermain />

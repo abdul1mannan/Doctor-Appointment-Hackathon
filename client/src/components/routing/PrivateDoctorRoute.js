@@ -1,28 +1,27 @@
-import React from "react";
-import { Route, Navigate } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const PrivateDoctorRoute = ({
-  component: Component,
   authDoctor: { isDoctorAuthenticated, loadingDoctor },
-  ...rest
-}) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      !isDoctorAuthenticated && !loadingDoctor ? (
-        <Navigate to="/loginDoctor" />
-      ) : (
-        <Component {...props} />
-      )
-    }
-  />
-);
+}) => {
+  return loadingDoctor ? (
+    <div>Loading...</div>
+  ) : !isDoctorAuthenticated ? (
+    <Navigate to="/loginDoctor" />
+  ) : (
+    <Outlet />
+  );
+};
 
 PrivateDoctorRoute.propTypes = {
-  authDoctor: PropTypes.object.isRequired,
+  authDoctor: PropTypes.shape({
+    isDoctorAuthenticated: PropTypes.bool,
+    loadingDoctor: PropTypes.bool,
+  }).isRequired,
 };
+
 const mapStateToProps = (state) => ({
   authDoctor: state.authDoctor,
 });
