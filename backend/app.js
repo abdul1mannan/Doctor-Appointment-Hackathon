@@ -1,5 +1,5 @@
-
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const doctors = require('./routes/api/doctors');
 const authsDoctor = require('./routes/api/authDoctor');
@@ -9,6 +9,13 @@ const profile = require('./routes/api/profile');
 const appointment = require('./routes/api/appointment');
 const path = require("path")
 
+// CORS configuration
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://cure-me.onrender.com'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json({ extended: false}));
 
