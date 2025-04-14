@@ -31,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "source-map-explorer 'build/static/js/*.js'"
   },
-   "proxy": "http://localhost:4000",
+   "proxy": "https://cure-me.onrender.com",
   "eslintConfig": {
     "extends": "react-app"
   },
