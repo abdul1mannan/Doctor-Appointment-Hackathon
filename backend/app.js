@@ -11,21 +11,9 @@ const path = require("path")
 
 app.use(express.json({ extended: false}));
 
-
-
-
-
-
-
 if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({ path: ".env" });
    }
-  
-
-
-
-
-
 
 //    APi Routes
 app.use('/api/doctors', doctors);
