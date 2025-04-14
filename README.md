@@ -1,10 +1,10 @@
 # Doctor Appointment System - MERN Application
 
-Welcome to our Doctor Appointment System, a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application designed to streamline doctor's appointments and enhance patient-doctor interactions.
+Welcome to our Doctor Appointment System Cure me, a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application designed to streamline doctor's appointments and enhance patient-doctor interactions.
 
 ## Features
 
-- **User Registration and Authentication**: Patients and doctors can register and log in securely.
+- **User Registration  nd Authentication**: Patients and doctors can register and log in securely.
 - **Appointment Booking**: Easily schedule appointments with a diverse range of specialized doctors.
 - **Doctor Profiles**: View detailed profiles of doctors, including past records and specialties.
 - **Patient Reviews**: Leave and read reviews to foster collaboration and transparency within the medical community.
