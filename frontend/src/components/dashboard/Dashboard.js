@@ -42,19 +42,19 @@ const Dashboard = ({
           <br />
           {profile !== null ? (
             <Fragment>
-              {profile.patients !== null && profile.patients.length > 0 ? (
+              {profile.patients && profile.patients.length > 0 ? (
                 <Patient patient={profile.patients} />
               ) : (
                 <h5 style={{ color: "#738f93" }}>No Appointments yet..</h5>
               )}
 
-              {profile.review !== null && profile.review.length > 0 ? (
+              {profile.review && profile.review.length > 0 ? (
                 <Review patient={profile.patients} review={profile.review} />
               ) : (
                 <h5 style={{ color: "#738f93" }}>No Reviews yet..</h5>
               )}
 
-              {profile.experience !== null && profile.experience.length > 0 ? (
+              {profile.experience && profile.experience.length > 0 ? (
                 <Experience experience={profile.experience} />
               ) : (
                 <h5 style={{ color: "#738f93" }}>
@@ -62,7 +62,7 @@ const Dashboard = ({
                 </h5>
               )}
 
-              {profile.education !== null && profile.education.length > 0 ? (
+              {profile.education && profile.education.length > 0 ? (
                 <Education education={profile.education} />
               ) : (
                 <h5 style={{ color: "#738f93" }}>
